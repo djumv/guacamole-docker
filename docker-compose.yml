@@ -6,7 +6,7 @@ services:
     hostname: db
     restart: always
     volumes:
-      - data:/var/lib/postgresql/data
+      - /nfs/docker/config/guacamole:/var/lib/postgresql/data
       - ./init/:/docker-entrypoint-initdb.d
     environment:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
